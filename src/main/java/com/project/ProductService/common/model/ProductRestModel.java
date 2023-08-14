@@ -1,4 +1,4 @@
-package com.project.ProductService.command.api.model;
+package com.project.ProductService.common.model;
 
 import lombok.Builder;
 import lombok.Data;

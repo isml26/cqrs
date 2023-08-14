@@ -1,5 +1,8 @@
 package com.project.ProductService;
 
+import com.project.ProductService.command.api.exception.ProductServiceEventsErrorHandler;
+import org.axonframework.config.EventProcessingConfigurer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,5 +12,8 @@ public class ProductServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProductServiceApplication.class, args);
 	}
-
+	@Autowired
+	public void configure(EventProcessingConfigurer confgurer){
+		confgurer.registerListenerInvocationErrorHandler("product",configuration -> new ProductServiceEventsErrorHandler());
+	}
 }

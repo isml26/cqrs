@@ -19,11 +19,13 @@ public class ProductEventsHandler {
     }
 
     @EventHandler
-    public void on(ProductCreatedEvent event) {
+    public void on(ProductCreatedEvent event) throws Exception {
         Product product =
                 new Product();
         BeanUtils.copyProperties(event,product);
         productRepository.save(product);
+
+        throw new Exception("Exception occurred -- ProductEventsHandler");
     }
 
     @ExceptionHandler

@@ -1,6 +1,6 @@
 package com.project.ProductService.command.api.controller;
 
-import com.project.ProductService.command.api.model.ProductRestModel;
+import com.project.ProductService.common.model.ProductRestModel;
 import com.project.ProductService.command.api.commands.CreateProductCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.web.bind.annotation.PostMapping;
